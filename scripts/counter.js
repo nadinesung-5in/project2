@@ -1,34 +1,130 @@
 //variables
 const counter = document.getElementById("counter");
-const number = document.getElementById("counter-button");
-const number2 = document.getElementById("counter-button2");
-const number3 = document.getElementById("counter-button3");
-const number4 = document.getElementById("counter-button4");
-const number5 = document.getElementById("counter-button5");
-const number6 = document.getElementById("counter-button6");
-const number7 = document.getElementById("counter-button7");
-const number8 = document.getElementById("counter-button8");
-const number9 = document.getElementById("counter-button9");
-const number10 = document.getElementById("counter-button10");
-const number11 = document.getElementById("counter-button11");
-const number12 = document.getElementById("counter-button12");
+const plusOne = document.getElementById("plus-one-button");
+const minusOne = document.getElementById("minus-one-button");
+const clear = document.getElementById("clear-button");
+const one = document.getElementById("one-button");
+const two = document.getElementById("two-button");
+const three = document.getElementById("three-button");
+const four = document.getElementById("four-button");
+const five = document.getElementById("five-button");
+const six = document.getElementById("six-button");
+const seven = document.getElementById("seven-button");
+const eight = document.getElementById("eight-button");
+const nine = document.getElementById("nine-button");
+const zero = document.getElementById("zero-button");
+const plus = document.getElementById("plus-button");
+const minus = document.getElementById("minus-button");
+const multiply = document.getElementById("multiply-button");
+const equal = document.getElementById("equal-button");
 let count = 0;
 
-//function & listeners
-number.addEventListener("click", () => {
-    count++;
-    counter.textContent = "🩷" + count;
-    console.log("like+1");
-});
+//functions
+function show(count) {
+ counter.textContent = "🩷" + count;
+}
 
-number2.addEventListener("click",() => {
-    count--;
-    counter.textContent = "🩷" + count;
-    console.log("like-1");
-})
+function plus1() {
+    count++; 
+    show(count);
+}
 
-number3.addEventListener("click",() => {
-    count = 0;
-    counter.textContent = "🩷" + count;
-    console.log("C");
-})
+function minus1() {
+    count--; 
+    show(count);
+}
+
+function Clear() {
+    count = 0; 
+    show(count);
+}
+
+function add1() {
+    count = count*10 + 1; 
+    show(count);
+}
+
+function add2() {
+    count = count*10 + 2; 
+    show(count);
+}
+
+function add3() {
+    count = count*10 + 3; 
+    show(count);
+}
+
+function add4() {
+    count = count*10 + 4; 
+    show(count);
+}
+
+function add5() {
+    count = count*10 + 5; 
+    show(count);
+}
+
+function add6() {
+    count = count*10 + 6; 
+    show(count);
+}
+
+function add7() {
+    count = count*10 + 7; 
+    show(count);
+}
+
+function add8() {
+    count = count*10 + 8; 
+    show(count);
+}
+
+function add9() {
+    count = count*10 + 9; 
+    show(count);
+}
+
+function add0() {
+    count = count*10 + 0; 
+    show(count);
+}
+
+function Plus() {
+    textContent = "+"; 
+    count = count + count;
+    show(count);
+}
+
+function Minus() {
+    textContent = "-"; 
+    count = count - count;
+    show(count);
+}
+
+function Multiply() {
+    textContent = "*"; 
+    count = count * count;
+    show(count);
+}
+
+function Equal() {
+    textContent = "count"; 
+    show(count);
+}
+
+//listeners
+plusOne.addEventListener("click", plus1);
+minusOne.addEventListener("click", minus1);
+clear.addEventListener("click", Clear)
+one.addEventListener("click", add1);
+two.addEventListener("click", add2);
+three.addEventListener("click", add3);
+four.addEventListener("click", add4);
+five.addEventListener("click", add5);
+six.addEventListener("click", add6);
+seven.addEventListener("click", add7);
+eight.addEventListener("click", add8);
+nine.addEventListener("click", add9);
+zero.addEventListener("click", add0);
+plus.addEventListener("click", Plus);
+equal.addEventListener("click", Equal);
