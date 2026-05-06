@@ -15,12 +15,12 @@ const nine = document.getElementById("nine-button");
 const zero = document.getElementById("zero-button");
 const plus = document.getElementById("plus-button");
 const minus = document.getElementById("minus-button");
+const multiply = document.getElementById("multiply-button");
+const devide = document.getElementById("devide-button");
 const equal = document.getElementById("equal-button");
 let count = 0;
 let oldCount = 0;
-let newCount = 0
-let minusOld = 0;
-let minusNew = 0;
+let operator = '';
 
 
 //functions
@@ -96,18 +96,38 @@ function add0() {
 function Plus() {
     oldCount = count;
     count = 0;
+    operator = 'plus';
 }
 
 function Minus() {
-   minusOld = count;
+   oldCount = count;
    count = 0;
+   operator = 'minus';
+}
+
+function Multiply() {
+   oldCount = count;
+   count = 0;
+   operator = 'multiply';
+}
+
+function Devide() {
+   oldCount = count;
+   count = 0;
+   operator = 'devide';
 }
 
 function Equal() {
-    newCount = count;
-    count = oldCount + newCount;
-    minusNew = count;
-    count = minusOld - minusNew;
+    if (operator === 'plus'){
+        count = oldCount + count;
+    } else if (operator === 'minus'){
+        count = oldCount - count;
+    } else if (operator === 'multiply'){
+        count = oldCount * count;
+    } else if (operator === 'devide'){
+        count = oldCount / count;
+    }
+    show(count);
 }
 
 //listeners
@@ -126,4 +146,6 @@ nine.addEventListener("click", add9);
 zero.addEventListener("click", add0);
 plus.addEventListener("click", Plus);
 minus.addEventListener("click", Minus);
+multiply.addEventListener("click", Multiply);
+devide.addEventListener("click", Devide);
 equal.addEventListener("click", Equal);

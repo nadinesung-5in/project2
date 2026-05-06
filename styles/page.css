@@ -43,13 +43,15 @@ a {
 
 #calculator {
   background-color: rgb(156, 123, 186);
-  max-width: 120px;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
+  width: 900px;
   text-align: center;
 }
 
 
+#calculator-buttons {
+  text-align: center;
+}
 footer {
   background-image: linear-gradient(to bottom, rgb(52, 46, 94), rgb(138, 83, 149));
   
