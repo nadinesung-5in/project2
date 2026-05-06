@@ -15,13 +15,17 @@ const nine = document.getElementById("nine-button");
 const zero = document.getElementById("zero-button");
 const plus = document.getElementById("plus-button");
 const minus = document.getElementById("minus-button");
-const multiply = document.getElementById("multiply-button");
 const equal = document.getElementById("equal-button");
 let count = 0;
+let oldCount = 0;
+let newCount = 0
+let minusOld = 0;
+let minusNew = 0;
+
 
 //functions
-function show(count) {
- counter.textContent = "🩷" + count;
+function show(num) {
+ counter.textContent = "🩷" + num;
 }
 
 function plus1() {
@@ -90,26 +94,20 @@ function add0() {
 }
 
 function Plus() {
-    textContent = "+"; 
-    count = count + count;
-    show(count);
+    oldCount = count;
+    count = 0;
 }
 
 function Minus() {
-    textContent = "-"; 
-    count = count - count;
-    show(count);
-}
-
-function Multiply() {
-    textContent = "*"; 
-    count = count * count;
-    show(count);
+   minusOld = count;
+   count = 0;
 }
 
 function Equal() {
-    textContent = "count"; 
-    show(count);
+    newCount = count;
+    count = oldCount + newCount;
+    minusNew = count;
+    count = minusOld - minusNew;
 }
 
 //listeners
@@ -127,4 +125,5 @@ eight.addEventListener("click", add8);
 nine.addEventListener("click", add9);
 zero.addEventListener("click", add0);
 plus.addEventListener("click", Plus);
+minus.addEventListener("click", Minus);
 equal.addEventListener("click", Equal);
